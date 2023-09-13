@@ -1,36 +1,45 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style.css">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
     <script src="script.js" defer></script>
-    <title>RECIPE </title>
-</head>
-<body>
+    <title>RECIPE</title>
+  </head>
+  <body>
     <form id="add-recipe-form" method="post" action="/">
-        <label for="recipe-name"> RECIPE NAME</label>
-        <input type="text" name="recipe-name"
-          placeholder="Enter recipe name"
-          id="recipe-name" 
-          required/>
-         <br>
-        <label for="preparation-time">PREPARATION TIME</label>
-        <input type="time" name="preparation-time"
-          placeholder="Enter preparation time"
-          id="preparation-time" 
-          required/>
-        <br>
-        <label for="steps">PREPARATION STEPS</label>
-        <textarea type =" text" name="steps" id="steps" placeholder="Enter Recipe steps"    cols="30" rows="5"></textarea>
-        <br>
-         <img src="https://images.unsplash.com/photo-1504674900247-0877df9cc836?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxleHBsb3JlLWZlZWR8MXx8fGVufDB8fHx8fA%3D%3D&w=1000&q=80" width="200" height="130">
-        <input type="submit" value="addrecipe" id="button1">
+      <label for="recipe-name"> RECIPE NAME</label>
+      <input
+        type="text"
+        name="recipe-name"
+        placeholder="Enter recipe name"
+        id="recipe-name"
+        required
+      />
+      <br />
+      <label for="preparation-time">PREPARATION TIME</label>
+      <input
+        type="time"
+        name="preparation-time"
+        placeholder="Enter preparation time"
+        id="preparation-time"
+        required
+      />
+      <br />
+      <label for="steps">PREPARATION STEPS</label>
+      <textarea
+        type=" text"
+        name="steps"
+        id="steps"
+        placeholder="Enter Recipe steps"
+        cols="30"
+        rows="5"
+      ></textarea>
+      <br />
 
-      </form>
-    <div id="app" >
-
-    
-</div>
-</body>
+      <input type="submit" value="addrecipe" id="button1" />
+    </form>
+    <div id="app"></div>
+  </body>
 </html>
