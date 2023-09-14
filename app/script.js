@@ -50,6 +50,8 @@ function updaterecipeListUI() {
     const recipeDiv = makerecipeDiv(favrecipe[i]);
     const recipeApp = document.querySelector("#app");
     recipeApp.appendChild(recipeDiv);
+    const totalcount = document.querySelector("#value");
+    totalcount.innerText = favrecipe.length;
   }
 }
 function addrecipe(recipe) {

@@ -1,6 +1,5 @@
-.body {
+body {
   font-family: sans-serif;
-  background-color: whitesmoke;
 }
 #app {
   display: grid;
