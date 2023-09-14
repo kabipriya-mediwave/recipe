@@ -11,8 +11,17 @@ function makerecipeDiv(recipe) {
   const h4 = document.createElement("h4");
   h4.innerText = recipe["steps"];
 
+  const imageDiv = document.createElement("div");
+  imageDiv.setAttribute("class", "imageBox");
+  const image = document.createElement("img");
+  image.src = recipe["image"];
+  image.setAttribute("class", "picture");
+  div.appendChild(imageDiv);
+  imageDiv.appendChild(image);
+
   const deleteBtn = document.createElement("button");
   deleteBtn.innerText = "Clear";
+
   deleteBtn.addEventListener("click", function () {
     removerecipe(recipe["id"]);
   });
@@ -46,6 +55,7 @@ function updaterecipeListUI() {
 function addrecipe(recipe) {
   favrecipe.push(recipe);
   updaterecipeListUI();
+  saveToLocalStorage();
 }
 function hookForm() {
   const form = document.querySelector("#add-recipe-form");
@@ -55,18 +65,31 @@ function hookForm() {
     const name = document.querySelector("#recipe-name").value;
     const time = document.querySelector("#preparation-time").value;
     const steps = document.querySelector("#steps").value;
+    const image = document.querySelector("#image").value;
 
     const recipe = {
       id: new Date().getTime(),
       title: name,
       time: time,
       steps: steps,
-
+      image: image,
       isEdit: false,
     };
     addrecipe(recipe);
   });
 }
-
-hookForm();
+function saveToLocalStorage() {
+  const str = JSON.stringify(favrecipe);
+  localStorage.setItem("my-recipe-list", str);
+}
+function getFromLocalStorage() {
+  const str = localStorage.getItem("my-recipe-list");
+  if (!str) {
+    favrecipe = [];
+  } else {
+    favrecipe = JSON.parse(str);
+  }
+}
+getFromLocalStorage();
 updaterecipeListUI();
+hookForm();
