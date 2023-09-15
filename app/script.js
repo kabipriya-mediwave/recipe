@@ -38,6 +38,7 @@ function removerecipe(recipeId) {
   const filteredArray = favrecipe.filter((recipe) => recipe.id != recipeId);
   favrecipe = filteredArray;
   updaterecipeListUI();
+  saveToLocalStorage();
 }
 function clearApp() {
   const app = document.querySelector("#app");
